@@ -25,6 +25,7 @@ cmder will be refered as console
 - Download composer https://getcomposer.org/download/
 - Pull Laravel/php project from git provider.
 - Rename `.env.example` file to `.env`inside the api project root and fill the database information.
+```php
   For example
   DB_CONNECTION=mysql
   DB_HOST=127.0.0.1
@@ -32,6 +33,9 @@ cmder will be refered as console
   DB_DATABASE=example
   DB_USERNAME=username
   DB_PASSWORD=password
+  ```
+
+
   (windows wont let you do it, so you have to open your console cd your project root directory and run `mv .env.example .env` )
 - Open the console and cd to api directory: 
 - Run `composer install` or ```php composer.phar install```
