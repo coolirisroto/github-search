@@ -9,36 +9,30 @@ import {
     StyleSheet,
     Text,
     View,
-    TouchableOpacity
 } from 'react-native';
 import { ListItem } from 'react-native-elements'
+import Moment from 'moment';
 
-export default class RepositoryBox extends Component {
-
-    _onPress = () => {
-        this.props.onPressItem(this.props.repository);
-    };
+export default class CommentBox extends Component {
 
     render() {
-        const { repository, index } = this.props;
-        if (!repository) {
+        const { comment, index } = this.props;
+        if (!comment) {
             return null
         } else {
             return (
-                <TouchableOpacity onPress={this._onPress}>
                     <ListItem
                         roundAvatar
                         topDivider
-                        leftAvatar={{ source: { uri: repository.owner.avatar_url } }}
+                        leftAvatar={{ source: { uri: comment.user.avatar_url } }}
                         containerStyle={{ backgroundColor: index % 2 === 0 ? '#eff0f1' : '#ffffff' }}
-                        title={repository.name}
+                        title={comment.body}
                         subtitle={
                             <View style={styles.subtitleView}>
-                                <Text style={[styles.subtitleText, { fontWeight: 'bold' }]}>{repository.owner.login}</Text>
+                                <Text style={[styles.subtitleText, { fontWeight: 'bold' }]}>{Moment(comment.created_at).format('llll')}</Text>
                             </View>
                         }
                     />
-                </TouchableOpacity>
             );
 
         }

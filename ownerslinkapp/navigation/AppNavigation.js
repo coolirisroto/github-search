@@ -1,5 +1,6 @@
 import React from 'react'
 import HomeScreen from '../screens/HomeScreen'
+import RepositoryDetailScreen from '../screens/RepositoryDetailScreen'
 
 import {
     createStackNavigator,
@@ -9,6 +10,7 @@ import {
 const RootStack = createStackNavigator(
     {
       Home: HomeScreen,
+      RepositoryDetail: RepositoryDetailScreen
     },
     {
         initialRouteName: "Home"

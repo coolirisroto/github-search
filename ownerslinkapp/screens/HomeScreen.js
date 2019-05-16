@@ -13,6 +13,11 @@ import RepositoriesList from './../components/RepositoriesList'
 const WAIT_INTERVAL = 1000;
 
 class HomeScreen extends Component {
+  static navigationOptions = ({ navigation }) => ({
+    title: 'Github Repositories',
+    headerLeft: null,
+    headerRight: null
+  })
 
   constructor(props) {
     super(props);
@@ -28,8 +33,9 @@ class HomeScreen extends Component {
     this.timer = setTimeout(this.triggerChange, WAIT_INTERVAL);
   };
 
-  _onPressItem =repository =>{
-      console.log(repository)
+  _onPressItem = repository =>{
+      this.props.selectCurrentRepository(repository);
+      this.props.navigation.navigate('RepositoryDetail', { title: repository.name });
   }
 
   triggerChange = () =>{
@@ -82,5 +88,6 @@ function mapStateToProps(state) {
   
 export default connect(mapStateToProps, {
     searchRepositories: actions.searchRepositories,
-    logSearch: actions.logSearch
+    logSearch: actions.logSearch,
+    selectCurrentRepository: actions.selectCurrentRepository
 })(HomeScreen);
