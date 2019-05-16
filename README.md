@@ -1,14 +1,14 @@
 # github-search
 App to search repositories 
-This proyect was developed by Laravel  And React Native
+This proyect was developed With Laravel  And React Native
 
 ## Quick Overview
 
 ### Requiriments 
-PHP 7.1
-MySQL
-Make sure you have Node v6 or later installed. No Xcode or Android Studio installation is required.
-npm or Yarn
+- PHP 7.1
+- MySQL
+- Make sure you have Node v6 or later installed. No Xcode or Android Studio installation is required.
+- npm or Yarn
 
 
 #### Laravel Setup
