@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   View,
-  Text,
 } from 'react-native';
 import { connect } from "react-redux";
 import * as actions from '../redux/global/actions';
@@ -37,6 +36,7 @@ class HomeScreen extends Component {
     const { search } = this.state;
     if(search){
         this.props.searchRepositories(search);
+        this.props.logSearch(search);
     }
 }
   render() {
@@ -81,5 +81,6 @@ function mapStateToProps(state) {
 }
   
 export default connect(mapStateToProps, {
-    searchRepositories: actions.searchRepositories
+    searchRepositories: actions.searchRepositories,
+    logSearch: actions.logSearch
 })(HomeScreen);
